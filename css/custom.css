@@ -1,0 +1,70 @@
+/*
+* Add your own custom CSS declarations here
+*/
+
+/* General styles –––––––––––––––––––––––––––––––––––––––––––––––––– */
+html {
+  color:darkred;
+}
+a {
+  color:darkred;
+}
+a:hover {
+  color:red;
+
+}
+
+/* Navigation –––––––––––––––––––––––––––––––––––––––––––––––––– */
+nav {
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  position: fixed;
+  left: 0;
+  display: block;
+  height: 5rem;
+  z-index: 99;
+  border-bottom: 1px solid darkgray;
+  background: lightgray;
+  background: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+}
+
+nav {
+  padding-top:0.5em;
+  font-weight:bold;
+}
+nav .title a {
+  font-size:2em;
+  text-decoration:none;
+  color:darkred;
+}
+nav ul {
+  float: right;
+}
+nav ul, nav li {
+  display:inline;
+}
+nav li a {
+  font-size:1.25em;
+  display: inline;
+  text-decoration: none;
+  color:darkred;
+  border-right:1px solid darkred;
+  padding:0rem 1rem 0rem 1rem;
+}
+
+/* Main content */
+article {
+  margin-top: 6rem; /* Add a top margin to avoid content overlay */
+}
+
+/* Navigation –––––––––––––––––––––––––––––––––––––––––––––––––– */
+footer {
+  color:white;
+  text-align:center;
+  min-height: 5rem;
+  border-top:1px solid darkgray;
+  background: darkred;
+  padding-top:2em;
+}

@@ -1,0 +1,15 @@
+[
+    "Alice\/Alan\/Alyx",
+    "Sibling\/Sibling\/Sibling",
+    "Dinah\/David\/Dana",
+    "Rabbit\/Rabbit\/Rabbit",
+    "Duchess\/Duke\/Regent",
+    "Pat\/Pat\/Pat",
+    "Bonnie\/Bill\/Bobbie",
+    "Caterpillar\/Caterpillar\/Caterpillar",
+    "Fish\/Fish\/Fish",
+    "Queen1\/King1\/Sovereign1",
+    "cook\/cook\/cook",
+    "Hatter\/Hatter\/Hatter",
+    "Queen2\/King2\/Ruler2"
+]

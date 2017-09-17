@@ -1,0 +1,15 @@
+{
+    "name": "markfullmer/gendered_text_frontend",
+    "description": "A display frontend for the Gendered Text Project",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "markfullmer",
+            "email": "mfullmer@gmail.com"
+        }
+    ]
+}
