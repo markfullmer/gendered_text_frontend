@@ -1,6 +1,0 @@
-[
-    "Princess\/Prince\/Sovereign",
-    "Frog",
-    "Queen\/King\/Ruler",
-    "Hayden\/Heinrich\/Hayden"
-]
