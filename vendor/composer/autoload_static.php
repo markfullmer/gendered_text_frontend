@@ -13,9 +13,22 @@ class ComposerStaticInit33f3abf301ed632faa09c16226d81c1a
     );
 
     public static $prefixLengthsPsr4 = array (
+        'g' => 
+        array (
+            'grandt\\ResizeGif\\Structure\\' => 27,
+            'grandt\\ResizeGif\\Files\\' => 23,
+            'grandt\\ResizeGif\\Debug\\' => 23,
+            'grandt\\ResizeGif\\' => 17,
+        ),
+        'Z' => 
+        array (
+            'ZipMerge\\' => 9,
+        ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
+            'PHPePub\\' => 8,
+            'PHPZip\\Zip\\' => 11,
         ),
         'G' => 
         array (
@@ -26,9 +39,37 @@ class ComposerStaticInit33f3abf301ed632faa09c16226d81c1a
     );
 
     public static $prefixDirsPsr4 = array (
+        'grandt\\ResizeGif\\Structure\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/grandt/phpresizegif/src/ResizeGif/Structure',
+        ),
+        'grandt\\ResizeGif\\Files\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/grandt/phpresizegif/src/ResizeGif/Files',
+        ),
+        'grandt\\ResizeGif\\Debug\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/grandt/phpresizegif/src/ResizeGif/Debug',
+        ),
+        'grandt\\ResizeGif\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/grandt/phpresizegif/src/ResizeGif',
+        ),
+        'ZipMerge\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/grandt/phpzipmerge/src/ZipMerge',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'PHPePub\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/grandt/phpepub/src/PHPePub',
+        ),
+        'PHPZip\\Zip\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpzip/phpzip/src/Zip',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -44,11 +85,24 @@ class ComposerStaticInit33f3abf301ed632faa09c16226d81c1a
         ),
     );
 
+    public static $classMap = array (
+        'RelativePath' => __DIR__ . '/..' . '/grandt/relativepath/RelativePath.php',
+        'UUID' => __DIR__ . '/..' . '/grandt/phpepub/src/lib.uuid.php',
+        'UUIDException' => __DIR__ . '/..' . '/grandt/phpepub/src/lib.uuid.php',
+        'UUIDStorage' => __DIR__ . '/..' . '/grandt/phpepub/src/lib.uuid.php',
+        'UUIDStorageException' => __DIR__ . '/..' . '/grandt/phpepub/src/lib.uuid.php',
+        'UUIDStorageStable' => __DIR__ . '/..' . '/grandt/phpepub/src/lib.uuid.php',
+        'UUIDStorageVolatile' => __DIR__ . '/..' . '/grandt/phpepub/src/lib.uuid.php',
+        'com\\grandt\\BinString' => __DIR__ . '/..' . '/grandt/binstring/BinString.php',
+        'com\\grandt\\BinStringStatic' => __DIR__ . '/..' . '/grandt/binstring/BinStringStatic.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit33f3abf301ed632faa09c16226d81c1a::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit33f3abf301ed632faa09c16226d81c1a::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit33f3abf301ed632faa09c16226d81c1a::$classMap;
 
         }, null, ClassLoader::class);
     }

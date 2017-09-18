@@ -3,8 +3,6 @@
 use GuzzleHttp\Client;
 
 $legend = [];
-$api = 'http://gendered-api.local/api';
-$cached = FALSE;
 $genders = ['male', 'female', 'non-binary'];
 $choices = '';
 
@@ -12,15 +10,7 @@ if (isset($_GET['selection'])) {
   $selection = $_GET['selection'];
   $cache_file = 'cache/legends/' . $selection . '.txt';
 }
-if (file_exists($cache_file)) {
-  $modified = filemtime($cache_file);
-  // If right now is less than 30 minutes past the file creation, consider the
-  // cache valid.
-  if (time() - 60 * 30 < $modified) {
-    $cached = TRUE;
-  }
-}
-if (!$cached) {
+if (!file_exists($cache_file)) {
   $client = new Client();
   $res = $client->request('GET', $api . '?text=' . $selection);
   if ($res->getStatusCode() == '200') {
@@ -43,7 +33,8 @@ if (!empty($legend)) {
 
   echo '<h3>Choose Genders</h3>';
   echo '<div class="row"><div class="two-thirds column">';
-  echo '<form action="' . $base_url . '/read" method="POST">';
+  echo '<form action="' . $base_url . 'read" method="POST">';
+  echo '<input type="hidden" name="text" value="' . $selection . '" />';
   echo '<span class="button" id="randomize" onclick="randomize()">Randomize</span>';
   echo $choices;
   echo '</div><div class="row"><div class="one-third column">';

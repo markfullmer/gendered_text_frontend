@@ -6,7 +6,14 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'grandt\\ResizeGif\\Structure\\' => array($vendorDir . '/grandt/phpresizegif/src/ResizeGif/Structure'),
+    'grandt\\ResizeGif\\Files\\' => array($vendorDir . '/grandt/phpresizegif/src/ResizeGif/Files'),
+    'grandt\\ResizeGif\\Debug\\' => array($vendorDir . '/grandt/phpresizegif/src/ResizeGif/Debug'),
+    'grandt\\ResizeGif\\' => array($vendorDir . '/grandt/phpresizegif/src/ResizeGif'),
+    'ZipMerge\\' => array($vendorDir . '/grandt/phpzipmerge/src/ZipMerge'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'PHPePub\\' => array($vendorDir . '/grandt/phpepub/src/PHPePub'),
+    'PHPZip\\Zip\\' => array($vendorDir . '/phpzip/phpzip/src/Zip'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),

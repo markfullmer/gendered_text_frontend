@@ -3,18 +3,7 @@
 use GuzzleHttp\Client;
 
 $texts = [];
-$api = 'http://gendered-api.local/api';
-$cached = FALSE;
-
-if (file_exists('cache/texts.json')) {
-  $modified = filemtime('cache/texts.json');
-  // If right now is less than 30 minutes past the file creation, consider the
-  // cache valid.
-  if (time() - 60 * 30 < $modified) {
-    $cached = TRUE;
-  }
-}
-if (!$cached) {
+if (!file_exists('cache/texts.json')) {
   $client = new Client();
   $res = $client->request('GET', $api . '?get_texts=1');
   if ($res->getStatusCode() == '200') {

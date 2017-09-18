@@ -7,6 +7,7 @@
 
 require 'vendor/autoload.php';
 $base_url = 'http://' . $_SERVER['SERVER_NAME'] . '/';
+$api = 'http://gendered-api.local/api';
 
 // Contains the leading HTML head text, mostly used for search engines.
 include 'templates/header.php';
@@ -22,10 +23,16 @@ include 'templates/navigation.php';
 $pages = ['about', 'participate'];
 if (isset($_GET['page']) && in_array($_GET['page'], $pages)) {
   $body = file_get_contents('templates/' . $_GET['page'] . '.html');
-  include 'templates/body.php';
+  echo $body;
 }
 elseif (isset($_GET['selection'])) {
   include 'dynamic/selection.php';
+}
+elseif (isset($_GET['read'])) {
+  include 'dynamic/read.php';
+}
+elseif (isset($_GET['export'])) {
+  include 'dynamic/export.php';
 }
 else {
   include 'dynamic/text_list.php';
