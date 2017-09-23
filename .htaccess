@@ -1,6 +1,10 @@
+DirectoryIndex index.php
+
 RewriteEngine On
 RewriteRule ^selection/(.*)$ ./index.php?selection=$1
 RewriteRule ^dashboard$ ./index.php?dashboard
 RewriteRule ^read$ ./index.php?read=1
 RewriteRule ^([a-zA-Z0-9]+)$ index.php?page=$1
 RewriteRule ^([a-zA-Z0-9]+)/$ index.php?page=$1
+
+AddHandler application/x-httpd-php71 .php .php5 .php4 .php3
