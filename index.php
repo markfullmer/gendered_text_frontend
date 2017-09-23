@@ -7,7 +7,7 @@
 
 session_start();
 require 'vendor/autoload.php';
-$base_url = 'http://' . $_SERVER['SERVER_NAME'] . '/';
+$base_url = '//' . $_SERVER['SERVER_NAME'] . '/';
 $api = 'https://gendered-text.markfullmer.com/api';
 
 // Contains the leading HTML head text, mostly used for search engines.
