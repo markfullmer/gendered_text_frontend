@@ -13,6 +13,18 @@ a:hover {
   color:red;
 }
 
+.panel {
+  border:1px solid darkgray;
+  width:100%;
+  border-radius:5px;
+  padding:1em;
+  margin:2em;
+}
+
+.success {
+  background:lightgreen;
+}
+
 .button.button-primary,
 button.button-primary,
 input[type="submit"].button-primary,

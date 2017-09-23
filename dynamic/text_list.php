@@ -13,10 +13,13 @@ if (!file_exists('cache/texts.json')) {
   }
 }
 $texts = (array) json_decode(file_get_contents('cache/texts.json'));
+$allowed = (array) json_decode(file_get_contents('allowed.json'));
 
 if ($texts) {
   foreach ($texts as $id => $title) {
-    $links[] = '<a href="/selection/' . $id . '">' . $title . '</a>';
+    if (in_array($id, $allowed)) {
+      $links[] = '<a href="/selection/' . $id . '">' . $title . '</a>';
+    }
   }
 }
 

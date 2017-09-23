@@ -1,9 +1,14 @@
 <?php
 
+/**
+ * @file
+ * Defines the logic for allowing a user to assign genders to characters.
+ */
+
 use GuzzleHttp\Client;
 
 $legend = [];
-$genders = ['male', 'female', 'non-binary'];
+$genders = ['female' => 0, 'male' => 1, 'non-binary' => 2];
 $choices = '';
 
 if (isset($_GET['selection'])) {
@@ -20,13 +25,19 @@ if (!file_exists($cache_file)) {
   }
 }
 $legend = (array) json_decode(file_get_contents($cache_file, 'w'));
-
 if (!empty($legend)) {
-  foreach ($legend as $names) {
-    $choices .= '<label for="characters[' . $names . ']">Gender for "' . $names . '": ';
-    $choices .= '<select id="characters[' . $names . ']" name="characters[' . $names . ']">';
-    foreach ($genders as $gender) {
-      $choices .= '<option value="' . $gender . '">' . ucfirst($gender) . '</option>';
+  foreach ($legend as $key => $values) {
+    $names = explode("/", $values->id);
+    $default_name = $names[$genders[$values->gender]];
+
+    $choices .= '<label for="characters[' . $values->id . ']">Gender for "' . $default_name . '": ';
+    $choices .= '<select id="characters[' . $values->id . ']" name="characters[' . $values->id . ']">';
+    foreach ($genders as $key => $gender) {
+      $choices .= '<option value="' . $key . '"';
+      if ($values->gender == $key) {
+        $choices .= ' selected="selected"';
+      }
+      $choices .= '>' . ucfirst($key) . ' ("' . $names[$genders{$key}] . '")</option>';
     }
     $choices .= '</select>';
   }
