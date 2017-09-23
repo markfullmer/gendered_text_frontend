@@ -1,5 +1,6 @@
 DirectoryIndex index.php
 
+RewriteRule ^(credentials.inc) - [F,L,NC]
 RewriteEngine On
 RewriteRule ^selection/(.*)$ ./index.php?selection=$1
 RewriteRule ^dashboard$ ./index.php?dashboard
