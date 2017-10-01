@@ -21,6 +21,29 @@ a:hover {
   margin:2em;
 }
 
+.splash {
+  border: 1px solid #9a9a9a;
+  outline: 2em solid #f2f1ee;
+  text-align:center;
+  margin-bottom:3em;
+}
+
+.splash .section-description {
+  padding:0.5em 2em 0.5em 2em;
+  text-align:left;
+}
+.splash h3 a {
+  text-decoration:none;
+}
+.splash h4 {
+  padding-top:1em;
+}
+
+.box_1, .box_2 {
+  border-top: 1px dashed #9a9a9a;
+  padding:1em;
+}
+
 .success {
   background:lightgreen;
 }
@@ -49,15 +72,10 @@ input[type="button"].button-primary:focus {
 
 /* Navigation –––––––––––––––––––––––––––––––––––––––––––––––––– */
 nav {
-  overflow: hidden;
-  position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
-  position: fixed;
   left: 0;
   display: block;
-  height: 7.5rem;
-  z-index: 99;
   border-bottom: 1px solid darkgray;
   background: lightgray;
   background: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
@@ -72,9 +90,17 @@ nav .title a {
   text-decoration:none;
   color:darkred;
 }
-nav .tag {
-  display:block;
+.tag {
+  display:none;
 }
+@media (min-width: 550px) {
+  .tag {
+    display:block;
+  }
+}
+
+
+
 nav ul {
   display:block;
   float: right;
@@ -103,5 +129,5 @@ footer {
   min-height: 5rem;
   border-top:1px solid darkgray;
   background: darkred;
-  padding-top:2em;
+  padding-top: 2em;
 }

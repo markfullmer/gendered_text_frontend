@@ -23,7 +23,7 @@ include 'templates/navigation.php';
 <?php
 $pages = ['about', 'participate'];
 $found = FALSE;
-$dynamic = ['selection', 'read', 'export', 'dashboard'];
+$dynamic = ['selection', 'read', 'export', 'dashboard', 'text_list'];
 if (isset($_GET['page']) && in_array($_GET['page'], $pages)) {
   $body = file_get_contents('templates/' . $_GET['page'] . '.html');
   echo $body;
@@ -39,6 +39,7 @@ else {
   }
 }
 if (!$found) {
+  include 'templates/homepage.html';
   include 'dynamic/text_list.php';
 }
 
