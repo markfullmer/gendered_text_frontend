@@ -5,8 +5,9 @@
  */
 session_start();
 require 'vendor/autoload.php';
-$base_url = '//' . $_SERVER['SERVER_NAME'] . '/';
-$api = 'https://gendered-text.markfullmer.com/api';
+if (file_exists(__DIR__ . '/settings.local.php')) {
+  require 'settings.local.php';
+}
 // Contains the leading HTML head text, mostly used for search engines.
 include 'templates/header.php';
 // Contains the navigation bar.
