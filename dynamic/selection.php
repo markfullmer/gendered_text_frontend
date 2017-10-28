@@ -46,9 +46,11 @@ if (!empty($legend)) {
   echo '<div class="row"><div class="two-thirds column">';
   echo '<form action="' . $base_url . 'read" method="POST">';
   echo '<input type="hidden" name="text" value="' . $selection . '" />';
+  echo '<span class="button" id="female" onclick="female()">All Female</span>';
+  echo '<span class="button" id="male" onclick="male()">All Male</span>';
   echo '<span class="button" id="randomize" onclick="randomize()">Randomize</span>';
   echo $choices;
-  echo '</div><div class="row"><div class="one-third column">';
+  echo '</div>  <div class="row"><div class="one-third column">';
   echo '<br /><input class="button button-primary" type="submit" name="submit" value="Read the text" /></div>';
   echo '</form>';
 }

@@ -1,15 +1,12 @@
 <?php
-
 /**
  * @file
  * Main "engine" file. Should not need to be customized.
  */
-
 session_start();
 require 'vendor/autoload.php';
 $base_url = '//' . $_SERVER['SERVER_NAME'] . '/';
 $api = 'https://gendered-text.markfullmer.com/api';
-
 // Contains the leading HTML head text, mostly used for search engines.
 include 'templates/header.php';
 // Contains the navigation bar.
@@ -21,9 +18,9 @@ include 'templates/navigation.php';
     <div class="row">
       <div class="twelve columns">
 <?php
-$pages = ['about', 'participate'];
+$pages = ['about', 'participate', 'faq' ,'instructions', 'guidelines' ,'Emily'];
 $found = FALSE;
-$dynamic = ['selection', 'read', 'export', 'dashboard', 'text_list'];
+$dynamic = ['selection', 'read', 'export', 'dashboard', 'text_list' , 'prepare'];
 if (isset($_GET['page']) && in_array($_GET['page'], $pages)) {
   $body = file_get_contents('templates/' . $_GET['page'] . '.html');
   echo $body;
@@ -40,9 +37,8 @@ else {
 }
 if (!$found) {
   include 'templates/homepage.html';
-  include 'dynamic/text_list.php';
-}
 
+}
 ?>
       </div>
     </div>

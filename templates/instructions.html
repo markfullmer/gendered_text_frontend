@@ -1,0 +1,106 @@
+﻿<h2>Instructions</h2>
+  <div class="section-description">
+ 
+
+<h4><a href="#0-the-word-map" aria-hidden="true" class="anchor" id="user-content-0-the-word-map"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. The Word Map</h4>
+Review the full list of <a href="https://docs.google.com/spreadsheets/d/1-GUMdQ8iMpOUSz8PddPFZgf0YZZnPkAqPp8tuS5kMfI/edit#gid=0">currently available gendered words</a> with mappings in the code. If you have suggestions for more words to add, <a href="mailto:esparkhu@gmail.com">contact us</a>.</P> 
+
+<h4><a href="#2-add-placeholders" aria-hidden="true" class="anchor" id="user-content-1-add-placeholders"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Add Placeholders</h4> 
+Text must have personae gender indicators entered as placeholder text, as well as a legend that instructs the code which gender should be used for each persona. Use our <a href="https://gendered-text.markfullmer.com/demo/prepare.php">on-line tool</a> to swap gendered text for placeholder text.
+
+<p>For example, original the <em>Alice in Wonderland</em> sentence, would be modified and a legend inserted:</p>
+<blockquote>
+<p>When the Rabbit came near {{ her(Alice) }}, {{ Alice }} began, in a low, timid voice, "If you please, {{ sir(Rabbit) }}—" The Rabbit started violently, dropped the white kid-gloves and the fan and scurried away into the darkness as hard as {{ he(Rabbit) }} could go.</p>
+<p><code>[[Alice/Alan/Al:female]]</code></p>
+</blockquote> <p>** Note the use of "herd" to differentiate determiner &amp; object. See <strong>Callouts</strong>,
+below.</p>
+
+<h4><a href="#2a-texts-with-multiple-personae" aria-hidden="true" class="anchor" id="user-content-1a-texts-with-multiple-personae"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2a. Texts with multiple personae</h4>
+<p>The sentence from D.H Lawrence's <em>Sons and Lovers</em>, "He kept her because he never satisfied her", illustrates two personae
+working in tandem. The text would be parameterized as:</p>
+<blockquote>
+<p>{{ He(Paul) }} kept {{ her(Clara) }} because {{ he(Paul) }} never
+satisfied {{ her(Clara) }}.</p>
+</blockquote>
+<p>Adding the legend <code>[[Paulina/Paul/Paulie:male][Clara/Clark/Clax:female]]</code> would generate
+the original text as default, while <code>[[Paulina/Paul/Paulie:female][Clara/Clark/Clax:male]]</code> would
+reverse the roles:</p>
+<blockquote>
+<p>She kept him because she never satisfied him.</p>
+</blockquote>
+<p>and <code>[[Paulina/Paul/Paulie:male][Clara/Clark/Clax:male]]</code> would generate:</p>
+<blockquote>
+<p>He kept him because he never satisfied him.</p>
+</blockquote>
+<h4><a href="#3-create-the-legend" aria-hidden="true" class="anchor" id="user-content-2-create-the-legend"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. Create the Legend</h4>
+
+<p>Text to be processed must include a legend, wrapped in double square brackets,
+which may appear anywhere in the text. An example legend:</p>
+<p><code> [[Mindy/Mork/Mod:male][Charlize/Charles/Char:female][Kate/Ken/Kan:non-binary]]
+
+</code></p>
+<p>Each element in the legend is wrapped in square brackets, and consists of the
+gendered proper names for the character, in the order <code>FEMALE/MALE/NON-BINARY</code>. 
+
+<P>The default gender of that personae is specified after a colon.</P>
+
+<P>So, using the legend above, the program will look for a character named "Mindy" or "Mork" or "Mod" and render this character as "Mork" with the male pronoun set. It will look for a character named "Charlize" or "Charles" or "Char" and render the character as "Charlize" with the female pronoun set. It will look for a character named "Kate," "Ken" or "Kan," and render the character as "Kan" with a non-binary pronoun.</P></li>
+<h3><a href="#callouts" aria-hidden="true" class="anchor" id="user-content-callouts"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Callouts</h3>
+<ul>
+<li>An idiosyncrasy of English language pronouns is that, while the male possessive
+pronoun "his" (as in "I like <strong>his</strong> shirt") is identical to the determinative
+(as in "That shirt is <strong>his</strong>"), the female equivalents differ (i.e., "I like
+<strong>her</strong> shirt" vs. "That shirt is <strong>hers</strong>"). Accordingly, male determinative
+pronouns must be entered as "hisd" (e.g., <code>That shirt is {{ hisd(Mork) }}</code>)
+for differentiation from the possessive "his" (to avoid the result "I like
+hers shirt").</li>
+<li>Similarly, the female determiner ("I like <strong>her</strong> hairdo") is identical to the
+female object ("I like <strong>her</strong>"), but the male forms differ ("I like <strong>his</strong> hairdo" vs.
+"I like <strong>him</strong>"). Therefore, the female determiner must be identified as "herd". <p>See the complete list of <a href="https://docs.google.com/spreadsheets/d/1-GUMdQ8iMpOUSz8PddPFZgf0YZZnPkAqPp8tuS5kMfI/edit#gid=0">currently available gendered words</a> with gendered variables.</p>
+<p><table>
+<thead>
+<tr>
+<th><u>Placeholder</u></th>
+<th><u>Female rendered text</u></th><th><u>Male rendered text</u></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{ She(Mindy) }}</code></td>
+<td>She</td><td>He</td>
+</tr>
+<tr>
+<td><code>{{ Mindy }}</code></td>
+<td>Mindy</td><td>Mork</td>
+</tr>
+<tr>
+<td><code>{{ he(Mindy) }}</code></td>
+<td>she</td><td>he</td>
+</tr>
+<tr>
+<td><code>{{ his(Mindy) }}</code></td>
+<td>hers</td><td>his</td>
+</tr>
+<tr>
+<td><code>{{ hisd(Mindy) }}</code></td>
+<td>her</td><td>his</td>
+</tr>
+<tr>
+<td><code>{{ him(Mindy) }}</code></td>
+<td>her</td><td>him</td>
+</tr>
+<tr>
+<td><code>{{ her(Mindy) }}</code></td>
+<td>her</td><td>him</td>
+</tr><td><code>{{ herd(Mindy) }}</code></td>
+<td>her</td><td>his</td>
+</tr></tbody></table></p>
+<h4><a href="#4-Example" aria-hidden="true" class="anchor" id="user-content-2-create-the-legend"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. Example</h4> Here is an excerpt from <a href="http://genderedtextproject.com/selection/1CiBoV7gOw2ghHVH-G2BM4lURZfK4OYRyI8O2yQ25-DM">The Frog Prince</a> <p> 
+
+<div class="container"><p>{{ He(Frog) }} told {{ her(Princess) }} that {{ he(Princess) }} had been enchanted by a spiteful fairy, who had changed {{ him(Frog) }} into a frog; and that {{ he(Frog) }} had been fated so to abide till some {{ princess(Princess) }} should take {{ him(Frog) }} out of the spring, and let {{ him(Frog) }} eat from {{ her(Princess) }} plate, and sleep upon {{ her(Princess) }} bed for three nights. ‘You,’ said the {{ prince(Frog) }}, ‘have broken {{ his(Fairy) }} cruel charm, and now I have nothing to wish for but that you should go with me into my father’s kingdom, where I will marry you, and love you as long as you live.’</p>
+
+<p>The young {{ princess(Princess) }}, you may be sure, was not long in saying ‘Yes’ to all this; and as they spoke a gay coach drove up, with eight beautiful horses, decked with plumes of feathers and a golden harness; and behind the coach rode the {{ prince(Frog) }}’s servant, faithful {{ Heinrich }}, who had bewailed the misfortunes of {{ his(Heinrich) }} dear master during {{ hisd(Frog) }} enchantment so long and so bitterly, that {{ his(Heinrich) }} heart had well-nigh burst.</p>
+
+<p>They then took leave of the {{ king(King) }}, and got into the coach with eight horses, and all set out, full of joy and merriment, for the {{ prince(Frog) }}’s kingdom, which they reached safely; and there they lived happily a great many years.</p>
+
+[[Princess/Prince/Sovereign:female][Frog/Frog/Frog:male][Queen/King/Ruler:male][Hayden/Heinrich/Hayden:male]]</p></div></p>
