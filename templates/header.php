@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="<?php echo $base_url; ?>/css/normalize.css">
   <link rel="stylesheet" href="<?php echo $base_url; ?>/css/skeleton.css">
   <link rel="stylesheet" href="<?php echo $base_url; ?>/css/custom.css">
-  <script src="<?php echo $base_url; ?>/js/randomize.js"></script>
+  <script src="<?php echo $base_url; ?>/js/autoselect.js"></script>
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
