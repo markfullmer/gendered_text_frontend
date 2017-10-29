@@ -21,7 +21,7 @@ include 'templates/navigation.php';
 <?php
 $pages = ['about', 'participate', 'faq' ,'instructions', 'guidelines' ,'Emily'];
 $found = FALSE;
-$dynamic = ['selection', 'read', 'export', 'dashboard', 'text_list' , 'prepare'];
+$dynamic = ['selection', 'read', 'export', 'dashboard', 'text_list' , 'prepare', 'test'];
 if (isset($_GET['page']) && in_array($_GET['page'], $pages)) {
   $body = file_get_contents('templates/' . $_GET['page'] . '.html');
   echo $body;
