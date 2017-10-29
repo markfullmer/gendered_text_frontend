@@ -131,3 +131,8 @@ footer {
   background: darkred;
   padding-top: 2em;
 }
+
+/* Prepare & Test Pages */
+.prepare textarea, .test textarea {
+  height:500px;
+}

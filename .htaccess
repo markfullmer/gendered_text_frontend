@@ -3,6 +3,8 @@ DirectoryIndex index.php
 RewriteRule ^(credentials.inc) - [F,L,NC]
 RewriteEngine On
 RewriteRule ^selection/(.*)$ ./index.php?selection=$1
+RewriteRule ^prepare$ ./index.php?prepare
+RewriteRule ^test$ ./index.php?test
 RewriteRule ^dashboard$ ./index.php?dashboard
 RewriteRule ^text_list$ ./index.php?text_list
 RewriteRule ^read$ ./index.php?read=1
