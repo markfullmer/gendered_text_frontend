@@ -68,12 +68,12 @@ $texts = (array) json_decode(file_get_contents('cache/texts.json'));
 $allowed = (array) json_decode(file_get_contents('allowed.json'));
 
 if ($texts) {
-  foreach ($texts as $id => $title) {
+  foreach ($texts as $id => $values) {
     $checked = '';
     if (in_array($id, $allowed)) {
       $checked = 'checked="checked"';
     }
-    $choices[] = '<input type="checkbox" name="allowed[]" value="' . $id . '" ' . $checked . '" /> ' . $title . '<br />';
+    $choices[] = '<input type="checkbox" name="allowed[]" value="' . $id . '" ' . $checked . '" /> ' . $values->title . '<br />';
   }
 }
 
