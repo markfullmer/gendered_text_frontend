@@ -37,7 +37,7 @@ if ($texts) {
         $rows[$id]['link'] = '<a href="/selection/' . $id . '">' . $values->title . '</a>';
         $rows[$id]['genre'] = $values->genre;
         $rows[$id]['wordcount'] = $values->wordcount;
-        $genrekey = strtolower(str_replace(' ', '-', $values->genre));
+        $genrekey = strtolower(preg_replace("/[^A-Za-z0-9]/", '', html_entity_decode($values->genre)));
         $genres[$genrekey] = $values->genre;
       }
     }
@@ -48,9 +48,11 @@ if (!empty($rows)) {
   echo '<h3>Available Texts</h3>';
   // Genre selection.
   if (!empty($genres)) {
+    asort($genres);
     echo '<form action="/text_list" method="get">';
     echo '<label for="bygenre">View by genre</label>';
     echo '<select name="bygenre">';
+    echo '<option value="any">-Any-</option>';
     foreach ($genres as $key => $genre) {
       echo '<option value="' . $key . '"';
       if (isset($_GET['bygenre'])) {
