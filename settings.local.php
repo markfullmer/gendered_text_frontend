@@ -6,7 +6,7 @@
  */
 
 $base_url = '//' . $_SERVER['SERVER_NAME'] . '/';
-$api = 'https://gendered-text.markfullmer.com/api';
+$api = 'https://gendered-text.markfullmer.com/api/index.php';
 
 // Redirect all Pantheon traffic to non-www, HTTPS protocol.
 if (php_sapi_name() != "cli" && $_SERVER['HTTP_HOST'] == 'genderedtextproject.com') {
