@@ -29,7 +29,7 @@ echo '
 if (isset($_POST['text'])) {
   $client = new Client();
   $res = $client->request('POST', $api, [
-    'query' => [
+    'form_params' => [
       'test' => $_POST['text'],
     ],
   ]);

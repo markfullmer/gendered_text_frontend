@@ -5,7 +5,7 @@ use GuzzleHttp\Client;
 if (isset($_POST['characters'])) {
   $texts = (array) json_decode(file_get_contents('cache/texts.json'));
   $id = $_POST['text'];
-  $title = urlencode($texts[$id]);
+  $title = urlencode($texts[$id]->title);
 
   $hash = md5($_POST['text'] . serialize($_POST['characters']));
   $export = '<a class="button button-primary" href="' . $base_url . '/dynamic/export.php?export=' . $hash . '&title=' . $title . '">Export to eBook</a>';
@@ -16,7 +16,7 @@ if (isset($_POST['characters'])) {
   else {
     $client = new Client();
     $res = $client->request('POST', $api, [
-      'query' => [
+      'form_params' => [
         'text' => $_POST['text'],
         'characters' => $_POST['characters'],
       ],
