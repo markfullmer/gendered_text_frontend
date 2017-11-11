@@ -11,6 +11,7 @@ $legend = [];
 $genders = ['female' => 0, 'male' => 1, 'non-binary' => 2];
 $choices = '';
 
+
 if (isset($_GET['selection'])) {
   $selection = $_GET['selection'];
   $cache_file = 'cache/legends/' . $selection . '.txt';

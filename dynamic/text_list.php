@@ -30,13 +30,13 @@ if ($texts) {
       if (is_string($values)) {
         $rows[$id]['title'] = '<a href="/selection/' . $id . '">' . $values . '</a>';
         $rows[$id]['genre'] = '';
-        $rows[$id]['wordcount'] = '';
+        
       }
       else {
         $rows[$id]['title'] = $values->title;
         $rows[$id]['link'] = '<a href="/selection/' . $id . '">' . $values->title . '</a>';
         $rows[$id]['genre'] = $values->genre;
-        $rows[$id]['wordcount'] = $values->wordcount;
+        
         $genrekey = strtolower(preg_replace("/[^A-Za-z0-9]/", '', html_entity_decode($values->genre)));
         $genres[$genrekey] = $values->genre;
       }
@@ -86,17 +86,12 @@ if (!empty($rows)) {
         return strcmp($a["genre"], $b["genre"]);
       });
     }
-    if ($_GET['sort'] == 'words') {
-      usort($rows, function ($a, $b) {
-          return $a['wordcount'] - $b['wordcount'];
-      });
-    }
   }
-  $queries = isset($_GET['bygenre']) ? '&bygenre=' . $_GET['bygenre'] : '';
+ $queries = isset($_GET['bygenre']) ? '&bygenre=' . $_GET['bygenre'] : '';
   echo '<table>';
-  echo '<thead><th><a href="/text_list?sort=title' . $queries . '">Title</a></th><th><a href="/text_list?sort=genre' . $queries . '">Genre</a></th><th><a href="/text_list?sort=words' . $queries . '">Word count</a></th></thead>';
+  echo '<thead><th><a href="/text_list?sort=title' . $queries . '">Title</a></th><th><a href="/text_list?sort=genre' . $queries . '">Genre</a></th></thead>';
   foreach ($rows as $id => $row) {
-    echo '<tr><td>' . $row['link'] . '</td><td>' . $row['genre'] . '</td><td>' . number_format($row['wordcount']) . '</td></tr>';
+    echo '<tr><td>' . $row['link'] . '</td><td>' . $row['genre'] . '</td></tr>';
   }
   echo '</table>';
 }
