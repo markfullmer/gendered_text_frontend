@@ -5,19 +5,7 @@
  * Lists available texts.
  */
 
-use GuzzleHttp\Client;
-
-$texts = [];
-if (!file_exists('cache/texts.json')) {
-  $client = new Client();
-  $res = $client->request('GET', $api . '?get_texts=1');
-  if ($res->getStatusCode() == '200') {
-    $file = fopen("cache/texts.json", "w");
-    fwrite($file, $res->getBody());
-    fclose($file);
-  }
-}
-$texts = (array) json_decode(file_get_contents('cache/texts.json'));
+$texts = get_text_list($api);
 $allowed = (array) json_decode(file_get_contents('allowed.json'));
 
 if ($texts) {

@@ -5,27 +5,19 @@
  * Defines the logic for allowing a user to assign genders to characters.
  */
 
-use GuzzleHttp\Client;
-
 $legend = [];
 $genders = ['female' => 0, 'male' => 1, 'non-binary' => 2];
 $choices = '';
-
-
+$selection = '';
 if (isset($_GET['selection'])) {
   $selection = $_GET['selection'];
-  $cache_file = 'cache/legends/' . $selection . '.txt';
 }
-if (!file_exists($cache_file)) {
-  $client = new Client();
-  $res = $client->request('GET', $api . '?text=' . $selection);
-  if ($res->getStatusCode() == '200') {
-    $file = fopen($cache_file, 'w');
-    fwrite($file, $res->getBody());
-    fclose($file);
-  }
+else {
+  die();
 }
-$legend = (array) json_decode(file_get_contents($cache_file, 'w'));
+$legend = get_text_legend($selection, $api);
+$texts = get_text_list($api);
+$title = $texts[$selection]->title;
 if (!empty($legend)) {
   foreach ($legend as $key => $values) {
     $names = explode("/", $values->id);
@@ -44,6 +36,7 @@ if (!empty($legend)) {
   }
 
   echo '<h3>Choose Genders</h3>';
+  echo '<h4><em>' . $title . '</em></h4>';
   echo '<div class="row"><div class="two-thirds column">';
   echo '<form action="' . $base_url . 'read" method="POST">';
   echo '<input type="hidden" name="text" value="' . $selection . '" />';
